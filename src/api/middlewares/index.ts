@@ -1,1 +1,1 @@
-export { default as RequestValidator } from './requestValidator'
+export { default as RequestValidator } from "./requestValidator";

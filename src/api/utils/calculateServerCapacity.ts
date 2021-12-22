@@ -1,14 +1,4 @@
-type ServerComponent = {
-	CPU: number;
-	RAM: number;
-	HDD: number;
-};
-
-type ServerProperties = {
-	server: ServerComponent;
-	virtualMachines: ServerComponent[];
-};
-
+import { ServerProperties, ServerComponent } from "./types";
 const sortVirtualMachines = (virtualMachines: ServerComponent[]) => {
 	return virtualMachines.sort((a, b) => {
 		let costForA = a.CPU + a.RAM + a.HDD;
@@ -30,12 +20,12 @@ export default function calculateServerCapacity(
 	try {
 		const sortedVirtualMachines = sortVirtualMachines(virtualMachines);
 
-		let canFit = (prev, curr) => (type) =>
+		const shouldFit = (prev, curr) => (type) =>
 			prev[type] + curr[type] <= server[type];
 
 		sortedVirtualMachines.reduce((prev, curr) => {
 			// Prepare curried function statement
-			let fittable = canFit(prev, curr);
+			const fittable = shouldFit(prev, curr);
 
 			// If the current VM can fit in without overload,
 			// increase server carrying capacity

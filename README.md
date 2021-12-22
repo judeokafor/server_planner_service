@@ -32,6 +32,13 @@ Make sure you have installed Nodejs on your machine.
 
  ```
 
+ ```
+ * To stop the server:
+ ```
+ docker-compose stop   
+
+ ```
+
  ### Usage without Docker
 * Installing dependencies
 ```
