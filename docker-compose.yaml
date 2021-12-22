@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  server_planner_service-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      ENV_NAME: dev
+    ports:
+      - 8080:8080
