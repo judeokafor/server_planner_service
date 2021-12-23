@@ -12,12 +12,9 @@ Services used:
 
  ## Usage and Information
 
- * Fork or clone this repo. [Link](https://github.com/judeokafor/server_planner_service.git)
+ * Fork or clone this [repo](https://github.com/judeokafor/server_planner_service.git).
 
- * Cd into the work folder appropriately.
-
-
-Make sure you have installed Nodejs on your machine.
+ * Cd into the work folder appropriately
 
  ### Usage with Docker
 
@@ -36,13 +33,16 @@ Make sure you have installed Nodejs on your machine.
  ```
 
  * To stop the server:
- 
+
  ```
  docker-compose stop   
 
  ```
 
  ### Usage without Docker
+
+~NOTE:~ `Make sure you have installed Nodejs on your machine.`
+
 * Installing dependencies
 ```
 npm i
