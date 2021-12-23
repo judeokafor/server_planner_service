@@ -41,7 +41,7 @@ Services used:
 
  ### Usage without Docker
 
-~NOTE:~ `Make sure you have installed Nodejs on your machine.`
+*NOTE:* `Make sure you have installed Nodejs on your machine.`
 
 * Installing dependencies
 ```
