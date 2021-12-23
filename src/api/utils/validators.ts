@@ -18,12 +18,16 @@ const validate = (routeId: RouteID): validator.ValidationChain[] => {
 			return [
 				body("server").isObject().exists(),
 				body("virtualMachines").isArray().exists(),
-				body("server.CPU").isInt({ min: 1}).exists(),
-				body("server.RAM").isInt({ min: 1}).exists(),
-				body("server.HDD").isInt({ min: 1}).exists(),
-				body("virtualMachines.*.CPU").isInt({ min: 1}).exists(),
-				body("virtualMachines.*.RAM").isInt({ min: 1}).exists(),
-				body("virtualMachines.*.HDD").isInt({ min: 1}).exists(),
+				body("server.CPU")
+					.isInt()
+					.exists()
+					.custom((value) => !/^(\-(\d*))$/.test(value))
+				,
+				body("server.RAM").isInt().exists().custom((value) => !/^(\-(\d*))$/.test(value)),
+				body("server.HDD").isInt().exists().custom((value) => !/^(\-(\d*))$/.test(value)),
+				body("virtualMachines.*.CPU").isInt().exists().custom((value) => !/^(\-(\d*))$/.test(value)),
+				body("virtualMachines.*.RAM").isInt().exists().custom((value) => !/^(\-(\d*))$/.test(value)),
+				body("virtualMachines.*.HDD").isInt().exists().custom((value) => !/^(\-(\d*))$/.test(value)),
 			];
 		}
 		default:

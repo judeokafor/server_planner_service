@@ -96,6 +96,18 @@ Sample Request Body :=>
 }
 ```
 
+Sample Response Body :=> 
+```
+{
+    "message": "Successfully calculated server capacity",
+    "status": "Success",
+    "data": {
+        "capacity": 3
+    }
+}
+
+```
+
 
 
 ## Author
