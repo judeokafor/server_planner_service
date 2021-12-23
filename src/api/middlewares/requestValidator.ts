@@ -9,7 +9,13 @@ export default async function requestValidator(
 	const errors = validationResult(req);
 
 	if (!errors.isEmpty()) {
-		return res.status(400).json({ errors: errors.array() });
+		return res
+			.status(400)
+			.json({
+				message: "Bad request",
+				status: "Error",
+				data: errors.array(),
+			});
 	}
 
 	return next();
