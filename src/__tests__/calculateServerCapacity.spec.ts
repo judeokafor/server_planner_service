@@ -8,6 +8,7 @@ describe("Running Server Capacity Unit tests <...>", () => {
 			const virtualMachines = [];
 			const capacity = calculateServerCapacity({ server, virtualMachines });
 			expect(capacity).toEqual(0);
+			expect(capacity).toBeFalsy();
 		});
 
 		it("should return zero if server properties is zero schema", () => {
@@ -15,6 +16,7 @@ describe("Running Server Capacity Unit tests <...>", () => {
 			const virtualMachines = [{ CPU: 1, RAM: 16, HDD: 10 }];
 			const capacity = calculateServerCapacity({ server, virtualMachines });
 			expect(capacity).toEqual(0);
+			expect(capacity).toBeFalsy();
 		});
 
 		it("should return zero if server properties is zero schema", () => {
@@ -22,6 +24,7 @@ describe("Running Server Capacity Unit tests <...>", () => {
 			const virtualMachines = [{ CPU: 1, RAM: 16, HDD: 10 }];
 			const capacity = calculateServerCapacity({ server, virtualMachines });
 			expect(capacity).toEqual(0);
+			expect(capacity).toBeFalsy();
 		});
 
 		it("should return a zero for absence of virtual machines", () => {
@@ -29,6 +32,7 @@ describe("Running Server Capacity Unit tests <...>", () => {
 			const virtualMachines = [];
 			const capacity = calculateServerCapacity({ server, virtualMachines });
 			expect(capacity).toEqual(0);
+			expect(capacity).toBeFalsy();
 		});
 	});
 
