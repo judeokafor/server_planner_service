@@ -6,8 +6,14 @@ export enum RouteID {
 	CalculateServerCapacity = "CalculateServerCapacity",
 }
 
-const validate = (type: RouteID): validator.ValidationChain[] => {
-	switch (type) {
+/**
+ * Utility function to help validate request schema.
+ * @param routeId uniquely identifies the route and what validation schema to use.
+ * @returns an array of validation schema.
+ */
+
+const validate = (routeId: RouteID): validator.ValidationChain[] => {
+	switch (routeId) {
 		case RouteID.CalculateServerCapacity: {
 			return [
 				body("server").isObject().exists(),
