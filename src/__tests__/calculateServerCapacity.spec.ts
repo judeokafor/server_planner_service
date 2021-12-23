@@ -34,8 +34,8 @@ describe("Running Server Capacity Unit tests <...>", () => {
 
 	describe("Server should calculate the capacity effectively", () => {
 		it("should return a valid answer for correct values for small server size with 3 virtual machines", () => {
-			const { smallServer } = mocks;
-			const { server, virtualMachines } = smallServer
+			const { lessThan3VirtualMachine } = mocks;
+			const { server, virtualMachines } = lessThan3VirtualMachine
 			const capacity = calculateServerCapacity({ server, virtualMachines });
 			expect(capacity).toEqual(2);
 		});
@@ -46,7 +46,7 @@ describe("Running Server Capacity Unit tests <...>", () => {
 			const capacity = calculateServerCapacity({ server, virtualMachines });
 			expect(capacity).toEqual(4);
 		});
-		
+
 		it("should return a valid answer for correct values for more than 10 virtual machines", () => {
 			const { moreThan10VirtualMachine } = mocks;
 			const { server, virtualMachines } = moreThan10VirtualMachine

@@ -16,7 +16,7 @@ export default function calculateServerCapacity(
 
 	let serverCapacity = 0;
 
-	// loops and reduces the server availability by the virtual machine
+	// loops and reduces the server availability for the virtual machine
 
 	virtualMachines.forEach((virtualMachine) => {
 		if (CPU && RAM && HDD) {
