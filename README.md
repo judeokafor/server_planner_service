@@ -12,7 +12,7 @@ Services used:
 
  ## Usage and Information
 
- * Fork or clone this repo. [Link] ()
+ * Fork or clone this repo. [Link](https://github.com/judeokafor/server_planner_service.git)
 
  * Cd into the work folder appropriately.
 
@@ -22,18 +22,21 @@ Make sure you have installed Nodejs on your machine.
  ### Usage with Docker
 
  * To start the server on local:
+
  ``` 
  docker-compose up --build
 
  ```
+
  * To run the tests:
+
  ```
  docker-compose run server_planner_service-api npm test   
 
  ```
 
- ```
  * To stop the server:
+ 
  ```
  docker-compose stop   
 
